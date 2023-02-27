@@ -1,7 +1,7 @@
 package com.example.rickandmorty_app.Network
 
 
-import com.example.rickandmorty_app.mdoel.DataRest
+import com.example.rickandmorty_app.model.DataRest
 import com.example.rickandmorty_app.Network.ApiService
 import javax.inject.Inject
 

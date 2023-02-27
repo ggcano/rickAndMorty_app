@@ -1,8 +1,8 @@
-package com.example.rickandmorty_app.mdoel
+package com.example.rickandmorty_app.model
 
 
-import com.example.rickandmorty_app.mdoel.Info
-import com.example.rickandmorty_app.mdoel.Result
+import com.example.rickandmorty_app.model.Info
+import com.example.rickandmorty_app.model.Result
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 

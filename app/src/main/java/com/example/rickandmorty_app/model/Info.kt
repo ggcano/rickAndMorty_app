@@ -1,4 +1,4 @@
-package com.example.rickandmorty_app.mdoel
+package com.example.rickandmorty_app.model
 
 
 import com.google.gson.annotations.SerializedName

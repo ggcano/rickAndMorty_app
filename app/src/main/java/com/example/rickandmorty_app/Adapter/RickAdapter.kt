@@ -4,14 +4,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 import com.example.rickandmorty_app.databinding.EachRowBinding
-import com.example.rickandmorty_app.mdoel.Result
+import com.example.rickandmorty_app.model.Result
 
-class PostAdapter(private var postList: List<Result>)
-    : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
+class RickAdapter(private var postList: List<Result>)
+    : RecyclerView.Adapter<RickAdapter.PostViewHolder>() {
+
+
     private lateinit var binding: EachRowBinding
-
+    var onItemClick: ((positionString: String) -> Unit)? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         binding = EachRowBinding.inflate(LayoutInflater.from(parent.context),
         parent,false)
@@ -19,7 +22,19 @@ class PostAdapter(private var postList: List<Result>)
     }
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
-        binding.tasks.text=postList[position].name
+        binding.txtName.text=postList[position].name
+        binding.txtState.text=postList[position].status
+
+        Glide.with(holder.itemView.context)
+            .load(postList[position].image)
+            .into(binding.imageView)
+
+        //itemClick
+        val id = postList[position].id
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(id.toString())
+        }
+
     }
 
     override fun getItemCount(): Int = postList.size
@@ -28,8 +43,7 @@ class PostAdapter(private var postList: List<Result>)
 
     }
 
-    fun setData(postList: List<Result>)
-    {
+    fun setData(postList: List<Result>) {
         this.postList=postList
         notifyDataSetChanged()
     }

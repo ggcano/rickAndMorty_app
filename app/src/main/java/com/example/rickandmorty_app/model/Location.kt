@@ -1,10 +1,10 @@
-package com.example.rickandmorty_app.mdoel
+package com.example.rickandmorty_app.model
 
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class Origin(
+data class Location(
     @SerializedName("name")
     var name: String,
     @SerializedName("url")
