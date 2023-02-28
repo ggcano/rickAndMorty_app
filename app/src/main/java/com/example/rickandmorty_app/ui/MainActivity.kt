@@ -1,5 +1,6 @@
-package com.example.rickandmorty_app
+package com.example.rickandmorty_app.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -8,7 +9,6 @@ import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
 import com.example.rickandmorty_app.Adapter.RickAdapter
 import com.example.rickandmorty_app.Util.ApiState
 import com.example.rickandmorty_app.ViewModel.MainViewModel
@@ -54,22 +54,15 @@ class MainActivity : AppCompatActivity(){
                         rickAdapter.notifyDataSetChanged()
                     }
                     is ApiState.Empty -> {
-                        Toast.makeText(this@MainActivity, "Este campo esta vacio", Toast.LENGTH_LONG)
+                        Toast.makeText(this@MainActivity, "Este campo esta vacio", Toast.LENGTH_LONG).show()
                     }
 
-                }
+                else -> {}
+            }
             }
         }
 
     }
-
-/*    private fun onListItemClick(position: String) {
-     *//*   //downloadImage(position)
-        Glide.with(this)
-            .load(R.drawable.descargajpg)
-            .into(binding.imageView)
-        binding.photographer.text = "Descarga completada"*//*
-    }*/
 
     private fun initRecyclerview() {
         rickAdapter= RickAdapter(ArrayList())
@@ -81,8 +74,16 @@ class MainActivity : AppCompatActivity(){
 
             rickAdapter.onItemClick = { character ->
                // var number: String= character
-                Toast.makeText(this@MainActivity, character, Toast.LENGTH_SHORT).show()
+               // Toast.makeText(this@MainActivity, character, Toast.LENGTH_SHORT).show()
+
+               goToDetailScreen(character)
             }
         }
+    }
+
+    private fun goToDetailScreen(value: String) {
+        val intent = Intent(this@MainActivity, DetailActivity::class.java)
+        intent.putExtra("value_id", value)
+        startActivity(intent)
     }
 }

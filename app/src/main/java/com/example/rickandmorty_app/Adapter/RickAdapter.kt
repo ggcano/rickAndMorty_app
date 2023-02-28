@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
 import com.example.rickandmorty_app.databinding.EachRowBinding
-import com.example.rickandmorty_app.model.Result
+import com.example.rickandmorty_app.modelPost.Result
 
 class RickAdapter(private var postList: List<Result>)
     : RecyclerView.Adapter<RickAdapter.PostViewHolder>() {

@@ -1,12 +1,10 @@
-package com.example.rickandmorty_app.model
+package com.example.rickandmorty_app.modelPost
 
 
-import com.example.rickandmorty_app.model.Info
-import com.example.rickandmorty_app.model.Result
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class DataRest(
+data class PostDTO(
     @SerializedName("info")
     var info: Info,
     @SerializedName("results")
