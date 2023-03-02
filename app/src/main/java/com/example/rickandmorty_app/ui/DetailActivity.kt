@@ -1,10 +1,13 @@
 package com.example.rickandmorty_app.ui
 
+import android.R
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
@@ -14,6 +17,7 @@ import com.example.rickandmorty_app.ViewModel.CharacterViewModel
 import com.example.rickandmorty_app.databinding.ActivityDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.scopes.ActivityRetainedScoped
+
 
 @ActivityRetainedScoped
 @AndroidEntryPoint
@@ -30,6 +34,11 @@ class DetailActivity : AppCompatActivity() {
         val id = intent.getStringExtra("value_id")
         viewModel.getCharacter(id.toString())
         setupGetCharacter()
+
+        // showing the back button in action bar
+        val actionBar: ActionBar? = supportActionBar
+        // showing the back button in action bar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
 
     }
 
@@ -72,5 +81,15 @@ class DetailActivity : AppCompatActivity() {
 
 
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.getItemId()) {
+            R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
