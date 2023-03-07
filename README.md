@@ -1,7 +1,7 @@
 # rick And Morty app
 MVVM - Dagger Hilt - Flow - Rick and Morty Api Rest
 
-![image](https://user-images.githubusercontent.com/46654557/223407357-d5a04716-29df-4235-b9ad-4ae7dd260f1c.png) ![image](https://user-images.githubusercontent.com/46654557/223407780-706e9590-378b-4c81-a1f4-14163104436d.png)
+![image](https://user-images.githubusercontent.com/46654557/223408077-69a0c04b-e83b-4fa4-8462-4283a4af1a48.png) ![image](https://user-images.githubusercontent.com/46654557/223407780-706e9590-378b-4c81-a1f4-14163104436d.png)
 
 
 Android-Kotlin-Mvvm-Dagger-Retrofit
