@@ -1,10 +1,17 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.rickandmorty_app.ui.MainActivity">
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/baseline_arrow_back_24"
+        android:title="Anterior" />
+    <item
+        android:id="@+id/navigation_next"
+        android:icon="@drawable/baseline_arrow_right"
+        android:title="Siguiente" />
+
+
+
+
 </menu>

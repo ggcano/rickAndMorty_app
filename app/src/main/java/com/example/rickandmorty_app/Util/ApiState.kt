@@ -3,6 +3,7 @@ package com.example.rickandmorty_app.Util
 
 import com.example.rickandmorty_app.modelPost.Result
 import com.example.rickandmorty_app.modelCharacter.CharacterDTO
+import com.example.rickandmorty_app.modelPost.Info
 
 sealed class ApiState{
     object Loading : ApiState()

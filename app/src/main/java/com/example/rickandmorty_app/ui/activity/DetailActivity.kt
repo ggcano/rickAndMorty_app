@@ -1,4 +1,4 @@
-package com.example.rickandmorty_app.ui
+package com.example.rickandmorty_app.ui.activity
 
 import android.R
 import android.annotation.SuppressLint
@@ -59,13 +59,16 @@ class DetailActivity : AppCompatActivity() {
                     is ApiState.CharacterSucess -> {
                         binding.txtCharacterName.isVisible = true
                         binding.txtCharacterName.text = it.data.name
+                        binding.txtCharacterIdNumber.text = it.data.id.toString()
                         binding.txtCharacterGender.text = it.data.gender
                         binding.txtCharacterEpisode.text =
                             it.data.episode.count().toString() + " episodes"
                         binding.txtCharacterSpecies.text = it.data.species
                         binding.txtCharacterLocation.text = "From " + it.data.location.name
 
-                        Glide.with(this@DetailActivity).load(it.data.image)
+                        Glide.with(this@DetailActivity)
+                            .load(it.data.image)
+                            .optionalCircleCrop()
                             .into(binding.imageViewCharacterDetail)
                         binding.progressBarDetail.isVisible = false
                     }

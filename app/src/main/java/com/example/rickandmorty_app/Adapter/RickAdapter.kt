@@ -27,7 +27,8 @@ class RickAdapter(private var postList: List<Result>)
 
         Glide.with(holder.itemView.context)
             .load(postList[position].image)
-            .into(binding.imageView)
+            .circleCrop()
+            .into(binding.imageCharacterRow)
 
         //itemClick
         val id = postList[position].id
@@ -47,5 +48,9 @@ class RickAdapter(private var postList: List<Result>)
         this.postList=postList
         notifyDataSetChanged()
     }
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
+
 
 }
