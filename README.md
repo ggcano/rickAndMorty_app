@@ -8,16 +8,17 @@ https://rickandmortyapi.com/
 Android-Kotlin-Mvvm-Dagger-Retrofit
 This sample demonstrate core application architecture for Android application using Android Architecture Components
 
-List and Detail
+-List and Detail Screen
 
+-Kotlin 
 
 -Clean code
 
--Android architecture components -State Flow
+-State Flow
 
 -View binding
 
--Kotlin
+-Corroutines
 
 -Glide
 
@@ -26,6 +27,12 @@ List and Detail
 -Retrofit
 
 -Shimmer Effect 
+
+-Bottom navigation
+
+-Fragments and Activity
+
+
 
 
 
