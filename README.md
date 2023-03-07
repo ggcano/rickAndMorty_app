@@ -6,7 +6,7 @@ MVVM - Dagger Hilt - Flow - Rick and Morty Api Rest
 Android-Kotlin-Mvvm-Dagger-Retrofit
 This sample demonstrate core application architecture for Android application using Android Architecture Components
 
-
+List and Detail
 
 
 -Clean code
